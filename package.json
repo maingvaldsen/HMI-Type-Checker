@@ -1,5 +1,5 @@
 {
-    "name": "hmi-typechecker",
+    "name": "hmi-type-checker",
     "displayName": "HMI Type Checker",
     "description": "HMI typings for making addons",
     "version": "1.0.0",

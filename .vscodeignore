@@ -1,0 +1,7 @@
+.git/**
+.gitignore
+.vscode/**
+README.md
+icon.bbmodel
+node_modules/**
+tsconfig.json
