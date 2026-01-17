@@ -349,6 +349,65 @@ function M:clamp(value, min, max) end
 
 
 
+---M but for model parts
+---@class modelAnimator
+animator = {}
+
+---Scale the selected UV indexes
+---@param fromUV number
+---@param toUV number
+---@param scaleX number X scale factor
+---@param scaleY number Y scale factor
+---@param scaleZ number Z scale factor
+function animator:scale(fromUV, toUV, scaleX, scaleY, scaleZ) end
+
+---Move the selected UV indexes along the X axis
+---@param fromUV number
+---@param toUV number
+---@param amount number Distance to move (positive = right, negative = left)
+function animator:moveX(fromUV, toUV, amount) end
+
+---Move the selected UV indexes along the Y axis
+---@param fromUV number
+---@param toUV number
+---@param amount number Distance to move (positive = up, negative = down)
+function animator:moveY(fromUV, toUV, amount) end
+
+---Move the selected UV indexes along the Z axis
+---@param fromUV number
+---@param toUV number
+---@param amount number Distance to move (positive = forward, negative = backward)
+function animator:moveZ(fromUV, toUV, amount) end
+
+---Rotate the selected UV indexes around the X axis
+---@param fromUV number
+---@param toUV number
+---@param degrees number Rotation in degrees
+---@param originX number|nil Optional pivot point X position
+---@param originY number|nil Optional pivot point Y position
+---@param originZ number|nil Optional pivot point Z position
+function animator:rotateX(fromUV, toUV, degrees, originX, originY, originZ) end
+
+---Rotate the selected UV indexes around the Y axis
+---@param fromUV number
+---@param toUV number
+---@param degrees number Rotation in degrees
+---@param originX number|nil Optional pivot point X position
+---@param originY number|nil Optional pivot point Y position
+---@param originZ number|nil Optional pivot point Z position
+function animator:rotateY(fromUV, toUV, degrees, originX, originY, originZ) end
+
+---Rotate the selected UV indexes around the Z axis
+---@param fromUV number
+---@param toUV number
+---@param degrees number Rotation in degrees
+---@param originX number|nil Optional pivot point X position
+---@param originY number|nil Optional pivot point Y position
+---@param originZ number|nil Optional pivot point Z position
+function animator:rotateZ(fromUV, toUV, degrees, originX, originY, originZ) end
+
+
+
 ---Read the client player's state, motion, and equipment for driving animations
 ---@class playerInfo
 P = {}
