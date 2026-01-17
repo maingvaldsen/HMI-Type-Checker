@@ -1,4 +1,5 @@
 !.vscode/extensions.json
+*.vsix
 .vscode
 node_modules/
 out/

@@ -6,6 +6,13 @@
     "license": "AGPL-3.0-only",
     "icon": "icon.png",
     "publisher": "maingvaldsen",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/maingvaldsen/HMI-Type-Checker.git"
+    },
+    "bugs": {
+        "url": "https://github.com/maingvaldsen/HMI-Type-Checker/issues"
+    },
     "engines": {
         "vscode": "^1.60.0"
     },
