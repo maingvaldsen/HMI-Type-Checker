@@ -280,36 +280,36 @@ function Tags:getFabricTag(id) end
 ---@class matrixMathUtils
 M = {}
 
----Scale the transformation MatrixStack
+---Scale the item
 ---@param matrices any
 ---@param scaleX number X scale factor
 ---@param scaleY number Y scale factor
 ---@param scaleZ number Z scale factor
 function M:scale(matrices, scaleX, scaleY, scaleZ) end
 
----Move the transformation MatrixStack along the X axis
+---Move the item along the X axis
 ---@param matrices any
 ---@param amount number Distance to move
 function M:moveX(matrices, amount) end
 
----Move the transformation MatrixStack along the Y axis
+---Move the item along the Y axis
 ---@param matrices any
 ---@param amount number Distance to move
 function M:moveY(matrices, amount) end
 
----Move the transformation MatrixStack along the Z axis
+---Move the item along the Z axis
 ---@param matrices any
 ---@param amount number Distance to move
 function M:moveZ(matrices, amount) end
 
----Move the transformation MatrixStack along all axis
+---Move the item along all axis
 ---@param matrices any
 ---@param amountX number
 ---@param amountY number
 ---@param amountZ number
 function M:translate(matrices, amountX, amountY, amountZ) end
 
----Rotate item around the X axis
+---Rotate the item around the X axis
 ---@param matrices any
 ---@param degrees number Rotation in degrees
 ---@param originX number|nil Optional pivot point X position
@@ -317,7 +317,7 @@ function M:translate(matrices, amountX, amountY, amountZ) end
 ---@param originZ number|nil Optional pivot point Z position
 function M:rotateX(matrices, degrees, originX, originY, originZ) end
 
----Rotate item around the Y axis
+---Rotate the item around the Y axis
 ---@param matrices any
 ---@param degrees number Rotation in degrees
 ---@param originX number|nil Optional pivot point X position
@@ -325,7 +325,7 @@ function M:rotateX(matrices, degrees, originX, originY, originZ) end
 ---@param originZ number|nil Optional pivot point Z position
 function M:rotateY(matrices, degrees, originX, originY, originZ) end
 
----Rotate item around the Z axis
+---Rotate the item around the Z axis
 ---@param matrices any
 ---@param degrees number Rotation in degrees
 ---@param originX number|nil Optional pivot point X position
@@ -333,14 +333,14 @@ function M:rotateY(matrices, degrees, originX, originY, originZ) end
 ---@param originZ number|nil Optional pivot point Z position
 function M:rotateZ(matrices, degrees, originX, originY, originZ) end
 
----Shear the transformation MatrixStack
+---Shear the item
 ---@param matrices any
 ---@param amountX number
 ---@param amountY number
 ---@param amountZ number
 function M:shear(matrices, amountX, amountY, amountZ) end
 
----Clamp a value between min and max
+---Clamp a value between two values
 ---@param value number Value to clamp
 ---@param min number Minimum value
 ---@param max number Maximum value
@@ -551,7 +551,7 @@ Texture = {}
 ---Load a texture for rendering
 ---@param namespace string Texture namespace (e.g., "minecraft")
 ---@param path string Texture path (e.g., "textures/particle/glowing_firefly.png")
----@return any texture Texture object for use in particle rendering
+---@return any texture Texture for use in particle rendering
 function Texture:of(namespace, path) end
 
 ---Particle manager API for creating and managing particles
@@ -559,30 +559,30 @@ function Texture:of(namespace, path) end
 particleManager = {}
 
 ---Add a new particle to the scene
----@param particles any particles variable from context or data
+---@param particles any particles variable from context
 ---@param gravity boolean Whether the particle is affected by gravity
----@param posX number Initial X position
----@param posY number Initial Y position
----@param posZ number Initial Z position
----@param deltaPosX number X position particle will move toward over its lifetime
----@param deltaPosY number Y position particle will move toward over its lifetime
----@param deltaPosZ number Z position particle will move toward over its lifetime
----@param rotX number Initial X rotation
----@param rotY number Initial Y rotation
----@param rotZ number Initial Z rotation
----@param deltaRotX number X rotation particle will move toward over its lifetime
----@param deltaRotY number Y rotation particle will move toward over its lifetime
----@param deltaRotZ number Z rotation particle will move toward over its lifetime
+---@param x number Initial X position
+---@param y number Initial Y position
+---@param z number Initial Z position
+---@param dx number X position particle will move toward over its lifetime
+---@param dy number Y position particle will move toward over its lifetime
+---@param dz number Z position particle will move toward over its lifetime
+---@param rx number Initial X rotation
+---@param ry number Initial Y rotation
+---@param rz number Initial Z rotation
+---@param drx number X rotation particle will move toward over its lifetime
+---@param dry number Y rotation particle will move toward over its lifetime
+---@param drz number Z rotation particle will move toward over its lifetime
 ---@param size number Particle size
----@param texture any Texture object from Texture:of()
+---@param texture any Texture from Texture:of()
 ---@param renderSpace any Render space ("ITEM", "SCREEN")
 ---@param hand any Hand from context or data
 ---@param lifetimeType string Lifetime type ("SPAWN", "OPACITY", "SCALE", "KEYFRAME")
----@param renderType string Render type ("ADDITIVE", "CUTOUT_L", "CUTOUT")
+---@param renderType string Render type ("ADDITIVE", "CUTOUT_L", "CUTOUT", and more that i cant remember)
 ---@param lifetime integer Total lifetime in ticks
 ---@param opacity integer Opacity (0-255)
 ---@param tickerFunction function|nil Optional ticker function for particle updates
-function particleManager:addParticle(particles, gravity, posX, posY, posZ, deltaPosX, deltaPosY, deltaPosZ, rotX, rotY, rotZ, deltaRotX, deltaRotY, deltaRotZ, size, texture, renderSpace, hand, lifetimeType, renderType, lifetime, opacity, tickerFunction) end
+function particleManager:addParticle(particles, gravity, x, y, z, dx, dy, dz, rx, ry, rz, drx, dry, drz, size, texture, renderSpace, hand, lifetimeType, renderType, lifetime, opacity, tickerFunction) end
 
 ---Block rendering control API
 ---@class renderAsBlock
@@ -599,7 +599,7 @@ function renderAsBlock:put(blockId, shouldRender) end
 ---@class debugger
 debugger = {}
 
----Print something
+---Print something to the screen
 ---@param info any Info to print
 function debugger:out(info) end
 
@@ -645,7 +645,7 @@ function debugger:out(info) end
 
 
 
----Global state object for storing data
+---Storage for persistant variables
 ---@class global
 global = {}
 
