@@ -1,3 +1,5 @@
+---@meta
+
 -- // ✦ Made by maingvaldsen ✦ \\ --
 
 ---Override camera position/rotation for cinematic or viewmodel effects
@@ -499,7 +501,7 @@ particleManager = {}
 
 ---Add a new particle to the scene
 ---@param particles any particles variable from context or data
----@param hasPhysics boolean Whether the particle is affected by physics (gravity)
+---@param gravity boolean Whether the particle is affected by gravity
 ---@param posX number Initial X position
 ---@param posY number Initial Y position
 ---@param posZ number Initial Z position
@@ -521,7 +523,7 @@ particleManager = {}
 ---@param lifetime integer Total lifetime in ticks
 ---@param opacity integer Opacity (0-255)
 ---@param tickerFunction function|nil Optional ticker function for particle updates
-function particleManager:addParticle(particles, hasPhysics, posX, posY, posZ, deltaPosX, deltaPosY, deltaPosZ, rotX, rotY, rotZ, deltaRotX, deltaRotY, deltaRotZ, size, texture, renderSpace, hand, lifetimeType, renderType, lifetime, opacity, tickerFunction) end
+function particleManager:addParticle(particles, gravity, posX, posY, posZ, deltaPosX, deltaPosY, deltaPosZ, rotX, rotY, rotZ, deltaRotX, deltaRotY, deltaRotZ, size, texture, renderSpace, hand, lifetimeType, renderType, lifetime, opacity, tickerFunction) end
 
 ---Block rendering control API
 ---@class renderAsBlock

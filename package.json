@@ -3,6 +3,8 @@
     "displayName": "HMI Type Checker",
     "description": "HMI typings for making addons",
     "version": "1.0.0",
+    "license": "AGPL-3.0-only",
+    "icon": "icon.png",
     "publisher": "maingvaldsen",
     "engines": {
         "vscode": "^1.60.0"
