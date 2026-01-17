@@ -35,7 +35,6 @@ async function loadFieldSetsFromStub(stubUri: vscode.Uri): Promise<FieldSets> {
       }
       if (!inBlock) continue;
 
-      // stop if we hit another class
       if (/^\s*---@class\s+\w+/.test(line)) break;
 
       const fieldMatch = line.match(/^\s*---@field\s+([A-Za-z_]\w*)\b/);
@@ -75,7 +74,6 @@ function computeInsertPosition(doc: vscode.TextDocument): vscode.Position {
   while (line < doc.lineCount) {
     const t = doc.lineAt(line).text.trim();
 
-    // Skip header comments & annotations
     if (t === "" || t.startsWith("--") || t.startsWith("---@")) {
       line++;
       continue;
@@ -84,7 +82,6 @@ function computeInsertPosition(doc: vscode.TextDocument): vscode.Position {
     break;
   }
 
-  // Ensure one blank line after header block
   if (line > 0) {
     const prev = doc.lineAt(line - 1).text.trim();
     if (prev !== "") {
@@ -107,14 +104,10 @@ function containerAllows(
   name: string
 ): boolean {
   const s = sets[container];
-  // If we failed to parse stub (empty set), allow anyway (still useful).
   if (s.size === 0) return true;
   return s.has(name);
 }
 
-/**
- * If the cursor/range is within `context.foo` or `data.foo`, return that access + exact range.
- */
 function findAccessAtRange(
   document: vscode.TextDocument,
   range: vscode.Range
@@ -122,7 +115,6 @@ function findAccessAtRange(
   const line = document.lineAt(range.start.line);
   const text = line.text;
 
-  // Scan all occurrences on the line; choose the one that overlaps the selection/cursor.
   const re = /\b(context|data)\.([A-Za-z_]\w*)\b/g;
   let m: RegExpExecArray | null;
 
@@ -136,7 +128,6 @@ function findAccessAtRange(
     const start = m.index;
     const end = start + full.length;
 
-    // Consider it "selected" if cursor is inside it, or selection intersects it.
     const intersects =
       (cursorChar >= start && cursorChar <= end) ||
       (range.start.character < end && range.end.character > start);
@@ -171,7 +162,6 @@ class ContextLocalQuickFixProvider implements vscode.CodeActionProvider {
 
     const actions: vscode.CodeAction[] = [];
 
-    // 1) Cursor-based: introduce local from context.foo / data.foo
     const access = findAccessAtRange(document, range);
     if (access) {
       const { container, name, accessRange } = access;
@@ -180,8 +170,6 @@ class ContextLocalQuickFixProvider implements vscode.CodeActionProvider {
         const title = `Introduce local '${name}' from ${container}.${name}`;
         const action = new vscode.CodeAction(title, ContextLocalQuickFixProvider.kindRefactor);
 
-        // Make it show under lightbulb as well by attaching it to the selection
-        // (doesn't need diagnostics).
         action.isPreferred = true;
 
         const edit = new vscode.WorkspaceEdit();
@@ -195,7 +183,6 @@ class ContextLocalQuickFixProvider implements vscode.CodeActionProvider {
       }
     }
 
-    // 2) Diagnostic-based: undefined global -> create local from context/data
     for (const diag of ctx.diagnostics) {
       const name = extractUnknownName(diag);
       if (!name) continue;
