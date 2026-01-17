@@ -1,0 +1,44 @@
+{
+    "name": "hmi-typechecker",
+    "displayName": "HMI Type Checker",
+    "description": "HMI typings for making addons",
+    "version": "1.0.0",
+    "publisher": "maingvaldsen",
+    "engines": {
+        "vscode": "^1.60.0"
+    },
+    "main": "./out/extension.js",
+    "activationEvents": [
+        "onLanguage:lua"
+    ],
+    "contributes": {
+        "commands": [
+            {
+                "command": "hmiTypings.enable",
+                "title": "HMI: Enable Typings"
+            },
+            {
+                "command": "hmiTypings.disable",
+                "title": "HMI: Disable Typings"
+            },
+            {
+                "command": "hmiTypings.toggle",
+                "title": "HMI: Toggle Typings"
+            }
+        ]
+    },
+    "scripts": {
+        "compile": "tsc -p .",
+        "watch": "tsc -w -p .",
+        "package": "vsce package"
+    },
+    "extensionDependencies": [
+        "sumneko.lua"
+    ],
+    "devDependencies": {
+        "@types/node": "^25.0.9",
+        "@types/vscode": "^1.60.0",
+        "@vscode/vsce": "^3.7.1",
+        "typescript": "^5.0.0"
+    }
+}
