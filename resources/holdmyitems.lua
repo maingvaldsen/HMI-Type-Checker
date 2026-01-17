@@ -289,17 +289,17 @@ function M:scale(matrices, scaleX, scaleY, scaleZ) end
 
 ---Move the transformation MatrixStack along the X axis
 ---@param matrices any
----@param amount number Distance to move (positive = right, negative = left)
+---@param amount number Distance to move
 function M:moveX(matrices, amount) end
 
 ---Move the transformation MatrixStack along the Y axis
 ---@param matrices any
----@param amount number Distance to move (positive = up, negative = down)
+---@param amount number Distance to move
 function M:moveY(matrices, amount) end
 
 ---Move the transformation MatrixStack along the Z axis
 ---@param matrices any
----@param amount number Distance to move (positive = forward, negative = backward)
+---@param amount number Distance to move
 function M:moveZ(matrices, amount) end
 
 ---Move the transformation MatrixStack along all axis
@@ -364,19 +364,19 @@ function animator:scale(fromUV, toUV, scaleX, scaleY, scaleZ) end
 ---Move the selected UV indexes along the X axis
 ---@param fromUV number
 ---@param toUV number
----@param amount number Distance to move (positive = right, negative = left)
+---@param amount number Distance to move
 function animator:moveX(fromUV, toUV, amount) end
 
 ---Move the selected UV indexes along the Y axis
 ---@param fromUV number
 ---@param toUV number
----@param amount number Distance to move (positive = up, negative = down)
+---@param amount number Distance to move
 function animator:moveY(fromUV, toUV, amount) end
 
 ---Move the selected UV indexes along the Z axis
 ---@param fromUV number
 ---@param toUV number
----@param amount number Distance to move (positive = forward, negative = backward)
+---@param amount number Distance to move
 function animator:moveZ(fromUV, toUV, amount) end
 
 ---Rotate the selected UV indexes around the X axis
