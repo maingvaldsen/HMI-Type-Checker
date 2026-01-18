@@ -1,3 +1,7 @@
+# How to install
+
+Open extensions in VS Code and click the three dots in the top right corner, then click "install from VSIX..." and find the file you downloaded from versions
+
 # How to use
 
 The extension can be toggled with the command HMI: Toggle Typings
