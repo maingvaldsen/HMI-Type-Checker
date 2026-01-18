@@ -4,7 +4,7 @@ Open extensions in VS Code and click the three dots in the top right corner, the
 
 # How to use
 
-The extension can be toggled with the command HMI: Toggle Typings. You might have to restart the language server or reload the window after enabling (also done through commands)
+The extension can be toggled with the command HMI: Toggle Typings. You might have to restart the language server or reload the window after enabling (also done through commands)(this is done automaticaly on version 1.1 and up)
 
 To use commands in VS Code press Control + Shift + P then search up the command
 
