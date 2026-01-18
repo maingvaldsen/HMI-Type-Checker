@@ -2,7 +2,7 @@
     "name": "hmi-type-checker",
     "displayName": "HMI Type Checker",
     "description": "HMI typings for making addons",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "license": "AGPL-3.0-only",
     "icon": "icon.png",
     "publisher": "maingvaldsen",
