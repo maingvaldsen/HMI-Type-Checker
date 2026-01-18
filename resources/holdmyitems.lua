@@ -558,7 +558,7 @@ function Texture:of(namespace, path) end
 ---@class particleManager
 particleManager = {}
 
----Add a new particle to the scene
+---Add a new particle to the screen
 ---@param particles any particles variable from context
 ---@param gravity boolean Whether the particle is affected by gravity
 ---@param x number Initial X position
