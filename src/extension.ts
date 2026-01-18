@@ -42,7 +42,7 @@ export async function activate(context: vscode.ExtensionContext) {
         const lib = await getLib();
         if (!lib.includes(stubPath)) {
             await setLib([...lib, stubPath]);
-            await vscode.commands.executeCommand("lua.startServer");
+            await vscode.commands.executeCommand("lua.restart");
         }
 
         vscode.window.showInformationMessage("HMI typings enabled for LuaLS in this workspace.");
