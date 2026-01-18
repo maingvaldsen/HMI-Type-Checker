@@ -578,8 +578,8 @@ particleManager = {}
 ---@param renderSpace any Render space ("ITEM", "SCREEN")
 ---@param hand any Hand from context or data
 ---@param lifetimeType string Lifetime type ("SPAWN", "OPACITY", "SCALE", "KEYFRAME")
----@param renderType string Render type ("ADDITIVE", "CUTOUT_L", "CUTOUT", and more that i cant remember)
----@param lifetime integer Total lifetime in ticks
+---@param renderType string Render type ("ADDITIVE", "CUTOUT", "CUTOUT_L", "TRANSLUCENT", "TRANSLUCENT_L" and more that i cant remember)
+---@param lifetime integer Total lifetime
 ---@param opacity integer Opacity (0-255)
 ---@param tickerFunction function|nil Optional ticker function for particle updates
 function particleManager:addParticle(particles, gravity, x, y, z, dx, dy, dz, rx, ry, rz, drx, dry, drz, size, texture, renderSpace, hand, lifetimeType, renderType, lifetime, opacity, tickerFunction) end
