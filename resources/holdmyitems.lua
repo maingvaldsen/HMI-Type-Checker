@@ -554,6 +554,15 @@ Texture = {}
 ---@return any texture Texture for use in particle rendering
 function Texture:of(namespace, path) end
 
+---Exposes keybind state for use in scripts
+---@class bindManager
+KeyBindManager = {}
+
+---Checks is a key is pressed
+---@param key number The key to check (JS Keycodes)
+---@return boolean state Wheter the key is pressed or not
+function KeyBindManager:isKeyPressed(key) end
+
 ---Particle manager API for creating and managing particles
 ---@class particleManager
 particleManager = {}
