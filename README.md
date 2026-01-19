@@ -1,6 +1,8 @@
-# How to install
+# How to install / update
 
-Open extensions in VS Code and click the three dots in the top right corner, then click "install from VSIX..." and find the file you downloaded from versions
+Open extensions in VS Code and click the three dots in the top right corner, then click "install from VSIX..." and find the file you downloaded from versions.
+
+**The process is excactly the same for updating, no need to uninstall or anything**
 
 # How to use
 
