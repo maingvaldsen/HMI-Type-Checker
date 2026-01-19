@@ -42,7 +42,11 @@ export async function activate(context: vscode.ExtensionContext) {
         const lib = await getLib();
         if (!lib.includes(stubPath)) {
             await setLib([...lib, stubPath]);
-            await vscode.commands.executeCommand("lua.restart");
+            try {
+                await vscode.commands.executeCommand("lua.restart");
+            } catch (err) {
+                console.error("LuaLS restart failed after enable:", err)
+            }
         }
 
         vscode.window.showInformationMessage("HMI typings enabled for LuaLS in this workspace.");
@@ -63,7 +67,7 @@ export async function activate(context: vscode.ExtensionContext) {
         else await enable();
     }
 
-    async function cleanup(loud = true) {
+    async function cleanup(loud = true, cleanupKeys = true) {
         const lib = await getLib();
 
         const suffix = "/resources/holdmyitems.lua";
@@ -73,8 +77,10 @@ export async function activate(context: vscode.ExtensionContext) {
         const removed = lib.filter(isStub);
         const next = lib.filter(p => !isStub(p));
 
-        await context.workspaceState.update("hmiTypings.autoEnabledVersion", undefined);
-        await context.workspaceState.update("hmiTypings.autoEnabled", undefined);
+        if (cleanupKeys) {
+            await context.workspaceState.update("hmiTypings.autoEnabledVersion", undefined);
+            await context.workspaceState.update("hmiTypings.autoEnabled", undefined);
+        }
 
         if (removed.length === 0) {
             if (loud) vscode.window.showInformationMessage("HMI cleanup ran: nothing to remove.");
@@ -97,16 +103,25 @@ export async function activate(context: vscode.ExtensionContext) {
     const lastVersion = context.workspaceState.get<string>(autoKey);
 
     if (lastVersion !== currentVersion) {
+        if (!vscode.workspace.workspaceFolders?.length) {
+            return;
+        }
+
         (async () => {
             try {
-                await cleanup(false);
+                await cleanup(false, false);
                 await enable();
 
                 await context.workspaceState.update(autoKey, currentVersion);
             } catch (err) {
                 console.error("HMI typings auto-enable failed:", err);
-                vscode.window.showErrorMessage("HMI typings failed to auto-enable after update.", "Retry").then(choice => {
-                    if (choice === "Retry") {vscode.commands.executeCommand("hmiTypings.enable")}
+                vscode.window.showErrorMessage("HMI typings failed to auto-enable after update.", "Retry").then(async choice => {
+                    if (choice === "Retry") try {
+                        await cleanup(false, false); await enable(); await context.workspaceState.update(autoKey, currentVersion);
+                    } catch (err) {
+                        console.error(err);
+                        vscode.window.showErrorMessage("HMI typings retry failed.")
+                    }
                 });
             }
         })();
