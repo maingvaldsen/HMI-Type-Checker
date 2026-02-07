@@ -612,6 +612,28 @@ debugger = {}
 ---@param info any Info to print
 function debugger:out(info) end
 
+
+
+---What
+---@class overlay
+OverlayCommand = {}
+
+---What the fuck
+---@param texture any texture from Texture:of()
+---@param opacity number opacity of the overlay (0 - 255)
+---@param something string i dont know ("DEFAULT")
+function OverlayCommand:of(texture, opacity, something) end
+
+---Overlays, who would have thunkeded
+---@class overlay
+overlays = {}
+
+---Overlay a texture on the players hand
+---@param OverlayCommand any from OverlayCommand:of()
+function overlays:add(OverlayCommand) end
+
+
+
 ---Container for all HMI variables
 ---@class context
 ---@field matrices any 
@@ -635,7 +657,7 @@ function debugger:out(info) end
 
 ---Container for all HMI variables (model part animations)
 ---@class data
----@field bl boolean Which hand the item is in (left / right, boolean)
+---@field bl boolean Which hand the item is in true for right, false for left (not main / offhand)
 ---@field swingProgress number
 ---@field player any The player object
 ---@field hand any The hand context
