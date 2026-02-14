@@ -725,6 +725,7 @@ function overlays:add(OverlayCommand) end
 ---@field interact boolean
 ---@field blockBreaking boolean
 ---@field item any The item this script is currently running for
+---@field spriteID string The path of the item model that is currently being rendered
 
 
 
