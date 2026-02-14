@@ -2,8 +2,6 @@
 
 -- // ✦ Made by maingvaldsen ✦ \\ --
 
----@class double
-
 ---Override camera position/rotation for cinematic or viewmodel effects
 ---@class cameraControls
 C = {}
@@ -31,157 +29,157 @@ function C:setCamRot(pitch, yaw, roll) end
 Easings = {}
 
 ---Sine easingstyle in
----@param progress double Progress from 0 - 1
+---@param progress number Progress from 0 - 1
 ---@return number ease Progress value in the curve
 function Easings:easeInSine(progress) end
 
 ---Sine easingstyle out
----@param progress double Progress from 0 - 1
+---@param progress number Progress from 0 - 1
 ---@return number ease Progress value in the curve
 function Easings:easeOutSine(progress) end
 
 ---Sine easingstyle inOut
----@param progress double Progress from 0 - 1
+---@param progress number Progress from 0 - 1
 ---@return number ease Progress value in the curve
 function Easings:easeInOutSine(progress) end
 
 ---Cubic easingstyle in
----@param progress double Progress from 0 - 1
+---@param progress number Progress from 0 - 1
 ---@return number ease Progress value in the curve
 function Easings:easeInCubic(progress) end
 
 ---Cubic easingstyle out
----@param progress double Progress from 0 - 1
+---@param progress number Progress from 0 - 1
 ---@return number ease Progress value in the curve
 function Easings:easeOutCubic(progress) end
 
 ---Cubic easingstyle inOut
----@param progress double Progress from 0 - 1
+---@param progress number Progress from 0 - 1
 ---@return number ease Progress value in the curve
 function Easings:easeInOutCubic(progress) end
 
 ---Quint easingstyle in
----@param progress double Progress from 0 - 1
+---@param progress number Progress from 0 - 1
 ---@return number ease Progress value in the curve
 function Easings:easeInQuint(progress) end
 
 ---Quint easingstyle out
----@param progress double Progress from 0 - 1
+---@param progress number Progress from 0 - 1
 ---@return number ease Progress value in the curve
 function Easings:easeOutQuint(progress) end
 
 ---Quint easingstyle inOut
----@param progress double Progress from 0 - 1
+---@param progress number Progress from 0 - 1
 ---@return number ease Progress value in the curve
 function Easings:easeInOutQuint(progress) end
 
 ---Circ easingstyle in
----@param progress double Progress from 0 - 1
+---@param progress number Progress from 0 - 1
 ---@return number ease Progress value in the curve
 function Easings:easeInCirc(progress) end
 
 ---Circ easingstyle out
----@param progress double Progress from 0 - 1
+---@param progress number Progress from 0 - 1
 ---@return number ease Progress value in the curve
 function Easings:easeOutCirc(progress) end
 
 ---Circ easingstyle inOut
----@param progress double Progress from 0 - 1
+---@param progress number Progress from 0 - 1
 ---@return number ease Progress value in the curve
 function Easings:easeInOutCirc(progress) end
 
 ---Elastic easingstyle in
----@param progress double Progress from 0 - 1
+---@param progress number Progress from 0 - 1
 ---@return number ease Progress value in the curve
 function Easings:easeInElastic(progress) end
 
 ---Elastic easingstyle out
----@param progress double Progress from 0 - 1
+---@param progress number Progress from 0 - 1
 ---@return number ease Progress value in the curve
 function Easings:easeOutElastic(progress) end
 
 ---Elastic easingstyle inOut
----@param progress double Progress from 0 - 1
+---@param progress number Progress from 0 - 1
 ---@return number ease Progress value in the curve
 function Easings:easeInOutElastic(progress) end
 
 ---Quad easingstyle in
----@param progress double Progress from 0 - 1
+---@param progress number Progress from 0 - 1
 ---@return number ease Progress value in the curve
 function Easings:easeInQuad(progress) end
 
 ---Quad easingstyle out
----@param progress double Progress from 0 - 1
+---@param progress number Progress from 0 - 1
 ---@return number ease Progress value in the curve
 function Easings:easeOutQuad(progress) end
 
 ---Quad easingstyle inOut
----@param progress double Progress from 0 - 1
+---@param progress number Progress from 0 - 1
 ---@return number ease Progress value in the curve
 function Easings:easeInOutQuad(progress) end
 
 ---Quart easingstyle in
----@param progress double Progress from 0 - 1
+---@param progress number Progress from 0 - 1
 ---@return number ease Progress value in the curve
 function Easings:easeInQuart(progress) end
 
 ---Quart easingstyle out
----@param progress double Progress from 0 - 1
+---@param progress number Progress from 0 - 1
 ---@return number ease Progress value in the curve
 function Easings:easeOutQuart(progress) end
 
 ---Quart easingstyle inOut
----@param progress double Progress from 0 - 1
+---@param progress number Progress from 0 - 1
 ---@return number ease Progress value in the curve
 function Easings:easeInOutQuart(progress) end
 
 ---Expo easingstyle in
----@param progress double Progress from 0 - 1
+---@param progress number Progress from 0 - 1
 ---@return number ease Progress value in the curve
 function Easings:easeInExpo(progress) end
 
 ---Expo easingstyle out
----@param progress double Progress from 0 - 1
+---@param progress number Progress from 0 - 1
 ---@return number ease Progress value in the curve
 function Easings:easeOutExpo(progress) end
 
 ---Expo easingstyle inOut
----@param progress double Progress from 0 - 1
+---@param progress number Progress from 0 - 1
 ---@return number ease Progress value in the curve
 function Easings:easeInOutExpo(progress) end
 
 ---Back easingstyle in
----@param progress double Progress from 0 - 1
+---@param progress number Progress from 0 - 1
 ---@return number ease Progress value in the curve
 function Easings:easeInBack(progress) end
 
 ---Back easingstyle out
----@param progress double Progress from 0 - 1
+---@param progress number Progress from 0 - 1
 ---@return number ease Progress value in the curve
 function Easings:easeOutBack(progress) end
 
 ---Back easingstyle inOut
----@param progress double Progress from 0 - 1
+---@param progress number Progress from 0 - 1
 ---@return number ease Progress value in the curve
 function Easings:easeInOutBack(progress) end
 
 ---Bounce easingstyle in
----@param progress double Progress from 0 - 1
+---@param progress number Progress from 0 - 1
 ---@return number ease Progress value in the curve
 function Easings:easeInBounce(progress) end
 
 ---Bounce easingstyle out
----@param progress double Progress from 0 - 1
+---@param progress number Progress from 0 - 1
 ---@return number ease Progress value in the curve
 function Easings:easeOutBounce(progress) end
 
 ---Bounce easingstyle inOut
----@param progress double Progress from 0 - 1
+---@param progress number Progress from 0 - 1
 ---@return number ease Progress value in the curve
 function Easings:easeInOutBounce(progress) end
 
 ---A smoothstep-like function
----@param progress double Progress from 0 - 1
+---@param progress number Progress from 0 - 1
 ---@return number ease Progress value in the curve
 function Easings:cubicEase(progress) end
 
@@ -373,9 +371,9 @@ function M:clamp(value, min, max) end
 ---@param a number Start point
 ---@param b number End point
 =======
----@param time double Time it should take to move from a to b
----@param a double Start point
----@param b double End point
+---@param time number Time it should take to move from a to b
+---@param a number Start point
+---@param b number End point
 >>>>>>> 98cb8131651dc9de782324f2e015577aad2d531c
 function M:lerp(time, a, b) end
 
