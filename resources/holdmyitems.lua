@@ -366,15 +366,9 @@ function M:pop(matrices) end
 function M:clamp(value, min, max) end
 
 ---Lerp
-<<<<<<< HEAD
 ---@param time number Time it should take to move from a to b
 ---@param a number Start point
 ---@param b number End point
-=======
----@param time number Time it should take to move from a to b
----@param a number Start point
----@param b number End point
->>>>>>> 98cb8131651dc9de782324f2e015577aad2d531c
 function M:lerp(time, a, b) end
 
 
