@@ -2,6 +2,8 @@
 
 -- // ✦ Made by maingvaldsen ✦ \\ --
 
+---@class double
+
 ---Override camera position/rotation for cinematic or viewmodel effects
 ---@class cameraControls
 C = {}
@@ -20,164 +22,172 @@ function C:setCamRot(pitch, yaw, roll) end
 
 
 
+------------------------ /////////////////////// Three spaces was not enough for me to notice so im just doing anything at this point to try and sepparete things 😭 \\\\\\\\\\\\\\\\\\\\\\\\ ------------------------
+
+
+
 ---Common easing functions to smooth transitions and motion
 ---@class animationCurves
 Easings = {}
 
 ---Sine easingstyle in
----@param progress number Progress from 0 - 1
+---@param progress double Progress from 0 - 1
 ---@return number ease Progress value in the curve
 function Easings:easeInSine(progress) end
 
 ---Sine easingstyle out
----@param progress number Progress from 0 - 1
+---@param progress double Progress from 0 - 1
 ---@return number ease Progress value in the curve
 function Easings:easeOutSine(progress) end
 
 ---Sine easingstyle inOut
----@param progress number Progress from 0 - 1
+---@param progress double Progress from 0 - 1
 ---@return number ease Progress value in the curve
 function Easings:easeInOutSine(progress) end
 
 ---Cubic easingstyle in
----@param progress number Progress from 0 - 1
+---@param progress double Progress from 0 - 1
 ---@return number ease Progress value in the curve
 function Easings:easeInCubic(progress) end
 
 ---Cubic easingstyle out
----@param progress number Progress from 0 - 1
+---@param progress double Progress from 0 - 1
 ---@return number ease Progress value in the curve
 function Easings:easeOutCubic(progress) end
 
 ---Cubic easingstyle inOut
----@param progress number Progress from 0 - 1
+---@param progress double Progress from 0 - 1
 ---@return number ease Progress value in the curve
 function Easings:easeInOutCubic(progress) end
 
 ---Quint easingstyle in
----@param progress number Progress from 0 - 1
+---@param progress double Progress from 0 - 1
 ---@return number ease Progress value in the curve
 function Easings:easeInQuint(progress) end
 
 ---Quint easingstyle out
----@param progress number Progress from 0 - 1
+---@param progress double Progress from 0 - 1
 ---@return number ease Progress value in the curve
 function Easings:easeOutQuint(progress) end
 
 ---Quint easingstyle inOut
----@param progress number Progress from 0 - 1
+---@param progress double Progress from 0 - 1
 ---@return number ease Progress value in the curve
 function Easings:easeInOutQuint(progress) end
 
 ---Circ easingstyle in
----@param progress number Progress from 0 - 1
+---@param progress double Progress from 0 - 1
 ---@return number ease Progress value in the curve
 function Easings:easeInCirc(progress) end
 
 ---Circ easingstyle out
----@param progress number Progress from 0 - 1
+---@param progress double Progress from 0 - 1
 ---@return number ease Progress value in the curve
 function Easings:easeOutCirc(progress) end
 
 ---Circ easingstyle inOut
----@param progress number Progress from 0 - 1
+---@param progress double Progress from 0 - 1
 ---@return number ease Progress value in the curve
 function Easings:easeInOutCirc(progress) end
 
 ---Elastic easingstyle in
----@param progress number Progress from 0 - 1
+---@param progress double Progress from 0 - 1
 ---@return number ease Progress value in the curve
 function Easings:easeInElastic(progress) end
 
 ---Elastic easingstyle out
----@param progress number Progress from 0 - 1
+---@param progress double Progress from 0 - 1
 ---@return number ease Progress value in the curve
 function Easings:easeOutElastic(progress) end
 
 ---Elastic easingstyle inOut
----@param progress number Progress from 0 - 1
+---@param progress double Progress from 0 - 1
 ---@return number ease Progress value in the curve
 function Easings:easeInOutElastic(progress) end
 
 ---Quad easingstyle in
----@param progress number Progress from 0 - 1
+---@param progress double Progress from 0 - 1
 ---@return number ease Progress value in the curve
 function Easings:easeInQuad(progress) end
 
 ---Quad easingstyle out
----@param progress number Progress from 0 - 1
+---@param progress double Progress from 0 - 1
 ---@return number ease Progress value in the curve
 function Easings:easeOutQuad(progress) end
 
 ---Quad easingstyle inOut
----@param progress number Progress from 0 - 1
+---@param progress double Progress from 0 - 1
 ---@return number ease Progress value in the curve
 function Easings:easeInOutQuad(progress) end
 
 ---Quart easingstyle in
----@param progress number Progress from 0 - 1
+---@param progress double Progress from 0 - 1
 ---@return number ease Progress value in the curve
 function Easings:easeInQuart(progress) end
 
 ---Quart easingstyle out
----@param progress number Progress from 0 - 1
+---@param progress double Progress from 0 - 1
 ---@return number ease Progress value in the curve
 function Easings:easeOutQuart(progress) end
 
 ---Quart easingstyle inOut
----@param progress number Progress from 0 - 1
+---@param progress double Progress from 0 - 1
 ---@return number ease Progress value in the curve
 function Easings:easeInOutQuart(progress) end
 
 ---Expo easingstyle in
----@param progress number Progress from 0 - 1
+---@param progress double Progress from 0 - 1
 ---@return number ease Progress value in the curve
 function Easings:easeInExpo(progress) end
 
 ---Expo easingstyle out
----@param progress number Progress from 0 - 1
+---@param progress double Progress from 0 - 1
 ---@return number ease Progress value in the curve
 function Easings:easeOutExpo(progress) end
 
 ---Expo easingstyle inOut
----@param progress number Progress from 0 - 1
+---@param progress double Progress from 0 - 1
 ---@return number ease Progress value in the curve
 function Easings:easeInOutExpo(progress) end
 
 ---Back easingstyle in
----@param progress number Progress from 0 - 1
+---@param progress double Progress from 0 - 1
 ---@return number ease Progress value in the curve
 function Easings:easeInBack(progress) end
 
 ---Back easingstyle out
----@param progress number Progress from 0 - 1
+---@param progress double Progress from 0 - 1
 ---@return number ease Progress value in the curve
 function Easings:easeOutBack(progress) end
 
 ---Back easingstyle inOut
----@param progress number Progress from 0 - 1
+---@param progress double Progress from 0 - 1
 ---@return number ease Progress value in the curve
 function Easings:easeInOutBack(progress) end
 
 ---Bounce easingstyle in
----@param progress number Progress from 0 - 1
+---@param progress double Progress from 0 - 1
 ---@return number ease Progress value in the curve
 function Easings:easeInBounce(progress) end
 
 ---Bounce easingstyle out
----@param progress number Progress from 0 - 1
+---@param progress double Progress from 0 - 1
 ---@return number ease Progress value in the curve
 function Easings:easeOutBounce(progress) end
 
 ---Bounce easingstyle inOut
----@param progress number Progress from 0 - 1
+---@param progress double Progress from 0 - 1
 ---@return number ease Progress value in the curve
 function Easings:easeInOutBounce(progress) end
 
 ---A smoothstep-like function
----@param progress number Progress from 0 - 1
+---@param progress double Progress from 0 - 1
 ---@return number ease Progress value in the curve
 function Easings:cubicEase(progress) end
+
+
+
+------------------------ /////////////////////// Three spaces was not enough for me to notice so im just doing anything at this point to try and sepparete things 😭 \\\\\\\\\\\\\\\\\\\\\\\\ ------------------------
 
 
 
@@ -201,6 +211,11 @@ function I:isIn(stack, tag) end
 ---@param stack any Item stack to check
 ---@return boolean state True if your holding nothing
 function I:isEmpty(stack) end
+
+---Check if the given stack is a block
+---@param stack any Item stack to check
+---@return boolean state True if the item is a block
+function I:isBlock(stack) end
 
 ---Check if the given stack is enchanted
 ---@param stack any Item stack to check
@@ -234,7 +249,7 @@ function I:isChargedCrossbow(stack) end
 
 ---If its throwable ig
 ---@param stack any Item stack to check
----@return boolean useHead Im just guessing at this point and if i ever find up im NOT remembering to update this shit
+---@return boolean useHead Im just guessing at this point and if i ever find out this does not return a boolean, then i would do something, idk 😭
 function I:isThrowable(stack) end
 
 ---Whether the default engine transform should be applied
@@ -276,7 +291,7 @@ function Tags:getFabricTag(id) end
 
 
 ---Matrix transforms for the current MatrixStack and common math helpers
----most math helpers are missing as you should be using lua's math. instead
+---most math helpers are missing as you should be using lua's math instead (math.)
 ---@class matrixMathUtils
 M = {}
 
@@ -340,6 +355,11 @@ function M:rotateZ(matrices, degrees, originX, originY, originZ) end
 ---@param amountZ number
 function M:shear(matrices, amountX, amountY, amountZ) end
 
+---Crashes the game, like deadass, thats all it does 😭
+---It's supposed to delete the matrices so you can have a fresh set with no animations from other packs and stuff to work on tho
+---@param matrices any
+function M:pop(matrices) end
+
 ---Clamp a value between two values
 ---@param value number Value to clamp
 ---@param min number Minimum value
@@ -347,9 +367,19 @@ function M:shear(matrices, amountX, amountY, amountZ) end
 ---@return number clamped The clamped value
 function M:clamp(value, min, max) end
 
+---Lerp
+---@param time double Time it should take to move from a to b
+---@param a double Start point
+---@param b double End point
+function M:lerp(time, a, b) end
 
 
----M but for model parts
+
+------------------------ /////////////////////// Three spaces was not enough for me to notice so im just doing anything at this point to try and sepparete things 😭 \\\\\\\\\\\\\\\\\\\\\\\\ ------------------------
+
+
+
+---M: but for model parts
 ---@class modelAnimator
 animator = {}
 
@@ -405,6 +435,10 @@ function animator:rotateY(fromUV, toUV, degrees, originX, originY, originZ) end
 ---@param originY number|nil Optional pivot point Y position
 ---@param originZ number|nil Optional pivot point Z position
 function animator:rotateZ(fromUV, toUV, degrees, originX, originY, originZ) end
+
+
+
+------------------------ /////////////////////// Three spaces was not enough for me to notice so im just doing anything at this point to try and sepparete things 😭 \\\\\\\\\\\\\\\\\\\\\\\\ ------------------------
 
 
 
@@ -533,6 +567,10 @@ function P:getBlockBelow(player, amount) end
 
 
 
+------------------------ /////////////////////// Three spaces was not enough for me to notice so im just doing anything at this point to try and sepparete things 😭 \\\\\\\\\\\\\\\\\\\\\\\\ ------------------------
+
+
+
 ---Play client-side sounds by vanilla sound id
 ---@class sounds
 S = {}
@@ -541,6 +579,10 @@ S = {}
 ---@param sound string The sound id to play (e.g., "entity.player.levelup")
 ---@param volume number The volume to play the sound at
 function S:playSound(sound, volume) end
+
+
+
+------------------------ /////////////////////// Three spaces was not enough for me to notice so im just doing anything at this point to try and sepparete things 😭 \\\\\\\\\\\\\\\\\\\\\\\\ ------------------------
 
 
 
@@ -604,6 +646,10 @@ function renderAsBlock:put(blockId, shouldRender) end
 
 
 
+------------------------ /////////////////////// Three spaces was not enough for me to notice so im just doing anything at this point to try and sepparete things 😭 \\\\\\\\\\\\\\\\\\\\\\\\ ------------------------
+
+
+
 ---Debugger to print stuff to the screen
 ---@class debugger
 debugger = {}
@@ -611,6 +657,10 @@ debugger = {}
 ---Print something to the screen
 ---@param info any Info to print
 function debugger:out(info) end
+
+
+
+------------------------ /////////////////////// Three spaces was not enough for me to notice so im just doing anything at this point to try and sepparete things 😭 \\\\\\\\\\\\\\\\\\\\\\\\ ------------------------
 
 
 
@@ -631,6 +681,10 @@ overlays = {}
 ---Overlay a texture on the players hand
 ---@param OverlayCommand any from OverlayCommand:of()
 function overlays:add(OverlayCommand) end
+
+
+
+------------------------ /////////////////////// Three spaces was not enough for me to notice so im just doing anything at this point to try and sepparete things 😭 \\\\\\\\\\\\\\\\\\\\\\\\ ------------------------
 
 
 
@@ -681,9 +735,9 @@ function overlays:add(OverlayCommand) end
 global = {}
 
 ---Container for all HMI variables
----@type context
+---@class context
 context = {}
 
 ---Container for all HMI variables (item_model and item_model_addon)
----@type data
+---@class data
 data = {}
