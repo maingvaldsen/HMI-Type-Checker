@@ -259,6 +259,10 @@ function I:shouldTranslateItem(stack) end
 ---@param bool boolean
 function I:setTranslate(stack, bool) end
 
+---Something something
+---@param item any Item from Items:get()
+function I:getDefaultStack(item) end
+
 
 
 ---Fetch Item instances from the registry
@@ -285,6 +289,10 @@ function Tags:getVanillaTag(id) end
 ---@param id string Tag name (e.g., "swords")
 ---@return any key Fabric item-tag key
 function Tags:getFabricTag(id) end
+
+
+
+------------------------ /////////////////////// Three spaces was not enough for me to notice so im just doing anything at this point to try and sepparete things 😭 \\\\\\\\\\\\\\\\\\\\\\\\ ------------------------
 
 
 
