@@ -557,11 +557,22 @@ function P:getSwingCount(player) end
 
 
 
----The block below the player
+---Returns block ID string of the block directly under the player
 ---@param player any Player object from context or data
----@param amount number How far below the player to check (0 inside legs, -1 standing on, 1, head ish)
+---@return string block The block (e.g., "minecraft:dirt")
+function P:getStandingBlock(player) end
+
+---Returns block ID string of the block below the player by given number of steps
+---@param player any Player object from context or data
+---@param steps number How far below the player to check
 ---@return string block Block at the specified point (e.g., "minecraft:dirt")
-function P:getBlockBelow(player, amount) end
+function P:getBlockBelow(player, steps) end
+
+---Returns block ID string of the block above the player by given number of steps
+---@param player any Player object from context or data
+---@param steps number How far above the player to check
+---@return string block Block at the specified point (e.g., "minecraft:dirt")
+function P:getBlockAbove(player, steps) end
 
 
 
