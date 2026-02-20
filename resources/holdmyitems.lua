@@ -259,6 +259,10 @@ function I:shouldTranslateItem(stack) end
 ---@param bool boolean
 function I:setTranslate(stack, bool) end
 
+---Something something
+---@param item any Item from Items:get()
+function I:getDefaultStack(item) end
+
 
 
 ---Fetch Item instances from the registry
@@ -285,6 +289,10 @@ function Tags:getVanillaTag(id) end
 ---@param id string Tag name (e.g., "swords")
 ---@return any key Fabric item-tag key
 function Tags:getFabricTag(id) end
+
+
+
+------------------------ /////////////////////// Three spaces was not enough for me to notice so im just doing anything at this point to try and sepparete things 😭 \\\\\\\\\\\\\\\\\\\\\\\\ ------------------------
 
 
 
@@ -736,6 +744,7 @@ function overlays:add(OverlayCommand) end
 ---@field interact boolean
 ---@field blockBreaking boolean
 ---@field item any The item this script is currently running for
+---@field spriteID string The path of the item model that is currently being rendered
 
 
 
