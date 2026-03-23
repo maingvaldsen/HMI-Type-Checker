@@ -263,6 +263,14 @@ function I:setTranslate(stack, bool) end
 ---@param item any Item from Items:get()
 function I:getDefaultStack(item) end
 
+---Set an item in the offhand
+---@param theItem any Item to set in your offhand (from Items:get())
+function I:setOffItem(theItem) end
+
+---Set an item in the main hand
+---@param theItem any Item to set in your main hand (from Items:get())
+function I:setMainItem(theItem) end
+
 
 
 ---Fetch Item instances from the registry
