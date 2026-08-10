@@ -397,6 +397,12 @@ function M:lerp(time, a, b) end
 ---@class modelAnimator
 animator = {}
 
+---Render the model part pivot point at 
+---@param x number X offset
+---@param y number Y offset
+---@param z number z offset
+function animator:renderPivot(x, y, z) end
+
 ---Scale the selected UV indexes
 ---@param fromUV number
 ---@param toUV number
