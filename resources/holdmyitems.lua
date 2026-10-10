@@ -2,7 +2,7 @@
 
 -- // ✦ Made by maingvaldsen ✦ \\ --
 
----Override camera position/rotation for cinematic or viewmodel effects
+---DOES NOT CURRENTLY EXIST IN 6.0!!!!!!!
 ---@class cameraControls
 C = {}
 
@@ -26,162 +26,162 @@ function C.setCamRot(pitch, yaw, roll) end
 
 ---Common easing functions to smooth transitions and motion
 ---@class animationCurves
-Easings = {}
+easings = {}
 
 ---Sine easingstyle in
 ---@param progress number Progress from 0 - 1
 ---@return number ease Progress value in the curve
-function Easings.easeInSine(progress) end
+function easings.easeInSine(progress) end
 
 ---Sine easingstyle out
 ---@param progress number Progress from 0 - 1
 ---@return number ease Progress value in the curve
-function Easings.easeOutSine(progress) end
+function easings.easeOutSine(progress) end
 
 ---Sine easingstyle inOut
 ---@param progress number Progress from 0 - 1
 ---@return number ease Progress value in the curve
-function Easings.easeInOutSine(progress) end
+function easings.easeInOutSine(progress) end
 
 ---Cubic easingstyle in
 ---@param progress number Progress from 0 - 1
 ---@return number ease Progress value in the curve
-function Easings.easeInCubic(progress) end
+function easings.easeInCubic(progress) end
 
 ---Cubic easingstyle out
 ---@param progress number Progress from 0 - 1
 ---@return number ease Progress value in the curve
-function Easings.easeOutCubic(progress) end
+function easings.easeOutCubic(progress) end
 
 ---Cubic easingstyle inOut
 ---@param progress number Progress from 0 - 1
 ---@return number ease Progress value in the curve
-function Easings.easeInOutCubic(progress) end
+function easings.easeInOutCubic(progress) end
 
 ---Quint easingstyle in
 ---@param progress number Progress from 0 - 1
 ---@return number ease Progress value in the curve
-function Easings.easeInQuint(progress) end
+function easings.easeInQuint(progress) end
 
 ---Quint easingstyle out
 ---@param progress number Progress from 0 - 1
 ---@return number ease Progress value in the curve
-function Easings.easeOutQuint(progress) end
+function easings.easeOutQuint(progress) end
 
 ---Quint easingstyle inOut
 ---@param progress number Progress from 0 - 1
 ---@return number ease Progress value in the curve
-function Easings.easeInOutQuint(progress) end
+function easings.easeInOutQuint(progress) end
 
 ---Circ easingstyle in
 ---@param progress number Progress from 0 - 1
 ---@return number ease Progress value in the curve
-function Easings.easeInCirc(progress) end
+function easings.easeInCirc(progress) end
 
 ---Circ easingstyle out
 ---@param progress number Progress from 0 - 1
 ---@return number ease Progress value in the curve
-function Easings.easeOutCirc(progress) end
+function easings.easeOutCirc(progress) end
 
 ---Circ easingstyle inOut
 ---@param progress number Progress from 0 - 1
 ---@return number ease Progress value in the curve
-function Easings.easeInOutCirc(progress) end
+function easings.easeInOutCirc(progress) end
 
 ---Elastic easingstyle in
 ---@param progress number Progress from 0 - 1
 ---@return number ease Progress value in the curve
-function Easings.easeInElastic(progress) end
+function easings.easeInElastic(progress) end
 
 ---Elastic easingstyle out
 ---@param progress number Progress from 0 - 1
 ---@return number ease Progress value in the curve
-function Easings.easeOutElastic(progress) end
+function easings.easeOutElastic(progress) end
 
 ---Elastic easingstyle inOut
 ---@param progress number Progress from 0 - 1
 ---@return number ease Progress value in the curve
-function Easings.easeInOutElastic(progress) end
+function easings.easeInOutElastic(progress) end
 
 ---Quad easingstyle in
 ---@param progress number Progress from 0 - 1
 ---@return number ease Progress value in the curve
-function Easings.easeInQuad(progress) end
+function easings.easeInQuad(progress) end
 
 ---Quad easingstyle out
 ---@param progress number Progress from 0 - 1
 ---@return number ease Progress value in the curve
-function Easings.easeOutQuad(progress) end
+function easings.easeOutQuad(progress) end
 
 ---Quad easingstyle inOut
 ---@param progress number Progress from 0 - 1
 ---@return number ease Progress value in the curve
-function Easings.easeInOutQuad(progress) end
+function easings.easeInOutQuad(progress) end
 
 ---Quart easingstyle in
 ---@param progress number Progress from 0 - 1
 ---@return number ease Progress value in the curve
-function Easings.easeInQuart(progress) end
+function easings.easeInQuart(progress) end
 
 ---Quart easingstyle out
 ---@param progress number Progress from 0 - 1
 ---@return number ease Progress value in the curve
-function Easings.easeOutQuart(progress) end
+function easings.easeOutQuart(progress) end
 
 ---Quart easingstyle inOut
 ---@param progress number Progress from 0 - 1
 ---@return number ease Progress value in the curve
-function Easings.easeInOutQuart(progress) end
+function easings.easeInOutQuart(progress) end
 
 ---Expo easingstyle in
 ---@param progress number Progress from 0 - 1
 ---@return number ease Progress value in the curve
-function Easings.easeInExpo(progress) end
+function easings.easeInExpo(progress) end
 
 ---Expo easingstyle out
 ---@param progress number Progress from 0 - 1
 ---@return number ease Progress value in the curve
-function Easings.easeOutExpo(progress) end
+function easings.easeOutExpo(progress) end
 
 ---Expo easingstyle inOut
 ---@param progress number Progress from 0 - 1
 ---@return number ease Progress value in the curve
-function Easings.easeInOutExpo(progress) end
+function easings.easeInOutExpo(progress) end
 
 ---Back easingstyle in
 ---@param progress number Progress from 0 - 1
 ---@return number ease Progress value in the curve
-function Easings.easeInBack(progress) end
+function easings.easeInBack(progress) end
 
 ---Back easingstyle out
 ---@param progress number Progress from 0 - 1
 ---@return number ease Progress value in the curve
-function Easings.easeOutBack(progress) end
+function easings.easeOutBack(progress) end
 
 ---Back easingstyle inOut
 ---@param progress number Progress from 0 - 1
 ---@return number ease Progress value in the curve
-function Easings.easeInOutBack(progress) end
+function easings.easeInOutBack(progress) end
 
 ---Bounce easingstyle in
 ---@param progress number Progress from 0 - 1
 ---@return number ease Progress value in the curve
-function Easings.easeInBounce(progress) end
+function easings.easeInBounce(progress) end
 
 ---Bounce easingstyle out
 ---@param progress number Progress from 0 - 1
 ---@return number ease Progress value in the curve
-function Easings.easeOutBounce(progress) end
+function easings.easeOutBounce(progress) end
 
 ---Bounce easingstyle inOut
 ---@param progress number Progress from 0 - 1
 ---@return number ease Progress value in the curve
-function Easings.easeInOutBounce(progress) end
+function easings.easeInOutBounce(progress) end
 
 ---A smoothstep-like function
 ---@param progress number Progress from 0 - 1
 ---@return number ease Progress value in the curve
-function Easings.cubicEase(progress) end
+function easings.cubicEase(progress) end
 
 
 
@@ -191,85 +191,49 @@ function Easings.cubicEase(progress) end
 
 ---Convenient helpers for inspecting and manipulating ItemStacks and rendering-related flags used by the mod
 ---@class itemUtilities
-I = {}
+item = {}
+
+---idk i never used it
+---@return any noIdea I never used this, i genuinely have no idea what the fuck this returns
+function item.getUseAction() end
 
 ---Check if an item matches a given item type
----@param stack any Item stack to check
----@param itemType any Item type to match against (from Items.get())
+---@param id any Item type to match against (from Items.get())
 ---@return boolean matches True if the item matches the type
-function I.isOf(stack, itemType) end
+function item.isOf(id) end
 
 ---Check if an item is in a given tag
----@param stack any Item stack to check
 ---@param tag string Tag to check if item is in (from Tags.getVanillaTag() or Tags.getFabricTag())
 ---@return boolean matches True if the item is in the tag
-function I.isIn(stack, tag) end
-
----Check if the given stack is empty
----@param stack any Item stack to check
----@return boolean state True if your holding nothing
-function I.isEmpty(stack) end
-
----Check if the given stack is a block
----@param stack any Item stack to check
----@return boolean state True if the item is a block
-function I.isBlock(stack) end
-
----Check if the given stack is enchanted
----@param stack any Item stack to check
----@return boolean state True if the given stack is enchanted
-function I.isEnchanted(stack) end
-
----idk i never used it
----@param stack any Item stack to check
----@return any noIdea I never used this, i genuinely have no idea what the fuck this returns
-function I.getUseAction(stack) end
+function item.isIn(tag) end
 
 ---The identifier of the item your holding (e.g., "minecraft:sea_pickle")
----@param stack any Item stack to check
 ---@return string name
-function I.getName(stack) end
+function item.getId() end
 
----The actual name of the item your holding (e.g., "Sea Pickle" or if renamed in an anvil "A Pickle or something")
----@param stack any Item stack to check
+---The name of the item your holding (e.g., "Sea Pickle" or if renamed in an anvil "A Pickle or something")
 ---@return string name
-function I.getActualName(stack) end
+function item.getName() end
 
----idk i never used it
----@param stack any Item stack to check
----@return any noIdea I never used this, could be anything, probably a number tho if you use your head
-function I.getAttackDamage(stack) end
+---Check if the given stack is empty
+---@return boolean state True if your holding nothing
+function item.isEmpty() end
 
 ---If the item is a charged crossbow or something?? 😭
----@param stack any Item stack to check
 ---@return boolean boolean I never used this, but again, if you use your head you should come to the same conclution as me
-function I.isChargedCrossbow(stack) end
+function item.isChargedCrossbow() end
 
----If its throwable ig
----@param stack any Item stack to check
----@return boolean useHead Im just guessing at this point and if i ever find out this does not return a boolean, then i would do something, idk 😭
-function I.isThrowable(stack) end
+---Check if the given stack is a block
+---@return boolean state True if the item is a block
+function item.isBlock() end
 
----Whether the default engine transform should be applied
----@param stack any Item stack
-function I.shouldTranslateItem(stack) end
+---Check if the given stack is a lantern
+---@return boolean state True if the item is a lantern
+function item.isLantern() end
 
----Force translate flag
----@param stack any Item stack
----@param bool boolean
-function I.setTranslate(stack, bool) end
-
----Something something
----@param item any Item from Items.get()
-function I.getDefaultStack(item) end
-
----Set an item in the offhand
----@param theItem any Item to set in your offhand (from Items.get())
-function I.setOffItem(theItem) end
-
----Set an item in the main hand
----@param theItem any Item to set in your main hand (from Items.get())
-function I.setMainItem(theItem) end
+---Check if the given stack is enchanted
+---@return boolean state True if the given stack is enchanted
+function item.isEnchanted() end
 
 
 
@@ -307,85 +271,58 @@ function Tags.getFabricTag(id) end
 ---Matrix transforms for the current MatrixStack and common math helpers
 ---most math helpers are missing as you should be using lua's math instead (math.)
 ---@class matrixMathUtils
-M = {}
+matrices = {}
+
+---Move the item along the X axis
+---@param amount number Distance to move
+function matrices.moveX(amount) end
+
+---Move the item along the Y axis
+---@param amount number Distance to move
+function matrices.moveY(amount) end
+
+---Move the item along the Z axis
+---@param amount number Distance to move
+function matrices.moveZ(amount) end
+
+---Move the item along all axis
+---@param amountX number
+---@param amountY number
+---@param amountZ number
+function matrices.translate(amountX, amountY, amountZ) end
+
+---Rotate the item around the X axis
+---@param degrees number Rotation in degrees
+---@param originX number|nil Optional pivot point X position
+---@param originY number|nil Optional pivot point Y position
+---@param originZ number|nil Optional pivot point Z position
+function matrices.rotateX(degrees, originX, originY, originZ) end
+
+---Rotate the item around the Y axis
+---@param degrees number Rotation in degrees
+---@param originX number|nil Optional pivot point X position
+---@param originY number|nil Optional pivot point Y position
+---@param originZ number|nil Optional pivot point Z position
+function matrices.rotateY(degrees, originX, originY, originZ) end
+
+---Rotate the item around the Z axis
+---@param degrees number Rotation in degrees
+---@param originX number|nil Optional pivot point X position
+---@param originY number|nil Optional pivot point Y position
+---@param originZ number|nil Optional pivot point Z position
+function matrices.rotateZ(degrees, originX, originY, originZ) end
+
+---Shear the item
+---@param amountX number
+---@param amountY number
+---@param amountZ number
+function matrices.shear(amountX, amountY, amountZ) end
 
 ---Scale the item
----@param matrices any
 ---@param scaleX number X scale factor
 ---@param scaleY number Y scale factor
 ---@param scaleZ number Z scale factor
-function M.scale(matrices, scaleX, scaleY, scaleZ) end
-
----Move the item along the X axis
----@param matrices any
----@param amount number Distance to move
-function M.moveX(matrices, amount) end
-
----Move the item along the Y axis
----@param matrices any
----@param amount number Distance to move
-function M.moveY(matrices, amount) end
-
----Move the item along the Z axis
----@param matrices any
----@param amount number Distance to move
-function M.moveZ(matrices, amount) end
-
----Move the item along all axis
----@param matrices any
----@param amountX number
----@param amountY number
----@param amountZ number
-function M.translate(matrices, amountX, amountY, amountZ) end
-
----Rotate the item around the X axis
----@param matrices any
----@param degrees number Rotation in degrees
----@param originX number|nil Optional pivot point X position
----@param originY number|nil Optional pivot point Y position
----@param originZ number|nil Optional pivot point Z position
-function M.rotateX(matrices, degrees, originX, originY, originZ) end
-
----Rotate the item around the Y axis
----@param matrices any
----@param degrees number Rotation in degrees
----@param originX number|nil Optional pivot point X position
----@param originY number|nil Optional pivot point Y position
----@param originZ number|nil Optional pivot point Z position
-function M.rotateY(matrices, degrees, originX, originY, originZ) end
-
----Rotate the item around the Z axis
----@param matrices any
----@param degrees number Rotation in degrees
----@param originX number|nil Optional pivot point X position
----@param originY number|nil Optional pivot point Y position
----@param originZ number|nil Optional pivot point Z position
-function M.rotateZ(matrices, degrees, originX, originY, originZ) end
-
----Shear the item
----@param matrices any
----@param amountX number
----@param amountY number
----@param amountZ number
-function M.shear(matrices, amountX, amountY, amountZ) end
-
----Crashes the game, like deadass, thats all it does 😭
----It's supposed to delete the matrices so you can have a fresh set with no animations from other packs and stuff to work on tho
----@param matrices any
-function M.pop(matrices) end
-
----Clamp a value between two values
----@param value number Value to clamp
----@param min number Minimum value
----@param max number Maximum value
----@return number clamped The clamped value
-function M.clamp(value, min, max) end
-
----Lerp
----@param time number Time it should take to move from a to b
----@param a number Start point
----@param b number End point
-function M.lerp(time, a, b) end
+function matrices.scale(scaleX, scaleY, scaleZ) end
 
 
 
@@ -393,7 +330,69 @@ function M.lerp(time, a, b) end
 
 
 
----M but for model parts
+---@class javaMath
+jmath = {}
+
+---Pie, yum
+---@return number pi The value of pi
+function jmath.PI() end
+
+---Get the sinus of a number
+---@param num number Number to get the sinus of
+---@return number sin the sinuse of the provided number
+function jmath.sin(num) end
+
+---Get the cosinus of a number
+---@param num number Number to get the cosinus of
+---@return number cos the cosinus of the provided number
+function jmath.cos(num) end
+
+---Clamp a number betwean two values
+---@param num number Number to clamp
+---@param min number The minimum the number can be
+---@param max number The maximum the number can be
+---@return number number The clamped number
+function jmath.clamp(num, min, max) end
+
+---Rounds a number down
+---@param num number The number to floor
+---@return number number The floored number
+function jmath.floor(num) end
+
+---Rounds a number down
+---@param num number The number to floor
+---@return number number The floored number
+function jmath.floor(num) end
+
+---Lerps a number linearly from one value to another
+---@param time number A number betwean 1 and 0 which represents where on the graph you are getting the number
+---@param start number Where the graph should start
+---@param stop number Where the graph should end
+---@return number val What number is at the provided time in the graph
+function jmath.lerp(time, start, stop) end
+
+---@param a number
+---@param b number
+---@return number num
+function jmath.pow(a, b) end
+
+---Rounds a number up
+---@param num number The number to round
+---@return number number The rounded number
+function jmath.floor(num) end
+
+---Rounds a number to the closest whole number
+---@param num number The number to round
+---@return number number The rounded number
+function jmath.round(num) end
+
+
+
+------------------------ /////////////////////// Three spaces was not enough for me to notice so im just doing anything at this point to try and sepparete things 😭 \\\\\\\\\\\\\\\\\\\\\\\\ ------------------------
+
+
+
+---matrices but for model parts
 ---@class modelAnimator
 animator = {}
 
@@ -464,137 +463,97 @@ function animator.rotateZ(fromUV, toUV, degrees, originX, originY, originZ) end
 
 ---Read the client player's state, motion, and equipment for driving animations
 ---@class playerInfo
-P = {}
+player = {}
 
----@param player any Player object from context or data
 ---@return boolean state
-function P.isSneaking(player) end
+function player.isSneaking() end
 
----@param player any Player object from context or data
 ---@return boolean state
-function P.isOnGround(player) end
+function player.isSprinting() end
 
----@param player any Player object from context or data
 ---@return boolean state
-function P.isSwimming(player) end
+function player.isUsingItem() end
 
----@param player any Player object from context or data
 ---@return boolean state
-function P.isClimbing(player) end
+function player.isOnGround() end
 
----@param player any Player object from context or data
 ---@return boolean state
-function P.isCrawling(player) end
+function player.isSwimming() end
 
----@param player any Player object from context or data
 ---@return boolean state
-function P.isSubmergedInWater(player) end
+function player.isClimbing() end
 
----@param player any Player object from context or data
 ---@return boolean state
-function P.isUsingItem(player) end
+function player.isCrawling() end
 
+---@return boolean state
+function player.isSubmergedInWater() end
 
+---@return boolean state
+function player.isTouchingWater() end
 
----Get the player's X coordinate
----@param player any Player object from context or data
----@return number pos
-function P.getX(player) end
+---@return boolean state
+function player.isUsingRiptide() end
 
----Get the player's Y coordinate
----@param player any Player object from context or data
----@return number pos
-function P.getY(player) end
+---@return boolean state
+function player.canFreeze() end
 
----Get the player's Z coordinate
----@param player any Player object from context or data
----@return number pos
-function P.getZ(player) end
+---@return boolean state
+function player.isInPowderSnow() end
 
----Get the player's speed on the X axis
----@param player any Player object from context or data
----@return number speed
-function P.getXSpeed(player) end
-
----Get the player's speed on the Y axis
----@param player any Player object from context or data
----@return number speed
-function P.getYSpeed(player) end
-
----Get the player's speed on the Z axis
----@param player any Player object from context or data
----@return number speed
-function P.getZSpeed(player) end
-
----Get the player's total speed
----@param player any Player object from context or data
----@return number speed
-function P.getSpeed(player) end
-
-
-
----Get the player's yaw (looking left/right)
----@param player any Player object from context or data
----@return number yaw Yaw in degrees (-inf to inf)
-function P.getYaw(player) end
-
----Get the player's pitch (looking up/down)
----@param player any Player object from context or data
----@return number pitch Pitch in degrees
-function P.getPitch(player) end
-
-
-
----Get the item stack in the player's mainhand
----@param player any Player object from context or data
----@return string item
-function P.getMainItem(player) end
-
----Get the item stack in the player's offhand
----@param player any Player object from context or data
----@return string item
-function P.getOffhandItem(player) end
-
----No idea, never used it, probably which hand this instance of the script is running on tho (same as bl?)
----@param player any Player object from context or data
-function P.getActiveHand(player) end
-
-
-
----Get the player's current age/ticks
----@param player any Player object from context or data
----@return number age Age in ticks
-function P.getAge(player) end
+---@return boolean state
+function player.isRaining() end
 
 ---Check if item is currently cooling down
 ---@param item any The item you want to check
----@param player any Player object from context or data
 ---@return boolean state
-function P.isItemCoolingDown(item, player) end
+function player.isItemCoolingDown(item) end
 
----The amount of times the player has swung something
----@param player any Player object from context or data
----@return number amount
-function P.getSwingCount(player) end
+---Get the player's health
+---@return number health
+function player.getHealth() end
 
+---Get the player's X coordinate
+---@return number pos
+function player.getX() end
 
+---Get the player's Y coordinate
+---@return number pos
+function player.getY() end
+
+---Get the player's Z coordinate
+---@return number pos
+function player.getZ() end
+
+---Get the vector of the player's speed
+---@return number x
+---@return number y
+---@return number z
+function player.getSpeedVector() end
+
+---Get the player's total speed
+---@return number speed
+function player.getSpeed() end
+
+---Get the player's yaw (looking left/right)
+---@return number yaw Yaw in degrees (-inf to inf)
+function player.getYaw() end
+
+---Get the player's pitch (looking up/down)
+---@return number pitch Pitch in degrees
+function player.getPitch() end
+
+---@return number scale
+function player.getFreezingScale() end
 
 ---Returns block ID string of the block directly under the player
----@param player any Player object from context or data
 ---@return string block The block (e.g., "minecraft:dirt")
-function P.getStandingBlock(player) end
+function player.getStandingBlock() end
 
----Returns block ID string of the block below the player by given number of steps
----@param player any Player object from context or data
----@param steps number How far below the player to check
----@return string block Block at the specified point (e.g., "minecraftdirt")
-function P.getBlockBelow(player, steps) end
+---@return string id
+function player.getBiomeId() end
 
----Returns block ID string of the block above the player by given number of steps
----@param player any Player object from context or data
----@param steps number How far above the player to check
----@return string block Block at the specified point (e.g., "minecraft:dirt")
-function P.getBlockAbove(player, steps) end
+function player.getActiveHand() end
 
 
 
@@ -602,14 +561,9 @@ function P.getBlockAbove(player, steps) end
 
 
 
----Play client-side sounds by vanilla sound id
+---DOES NOT CURRENTLY EXIST YET IN 6.0
 ---@class sounds
 S = {}
-
----Play a sound
----@param sound string The sound id to play (e.g., "entity.player.levelup")
----@param volume number The volume to play the sound at
-function S.playSound(sound, volume) end
 
 
 
@@ -791,7 +745,7 @@ function keyframe.length() end
 Loader = {}
 
 ---@param script string The path of the script to laod (e.g. "minecraft:holdmyitems/hand/swings.lua")
----@param context string What the script should run for ("hand", "hand relative", "item", "item model")
+---@param context string What the script should run for ("hand", "hand_relative", "item", "item_model")
 function Loader:load(script, context) end
 
 
@@ -802,55 +756,25 @@ function Loader:load(script, context) end
 
 ---Container for all HMI variables
 ---@class context
----@field matrices any 
----@field bl boolean Which hand the item is in true for right, false for left (not main / offhand)
 ---@field swingProgress number
----@field player any The player object
----@field hand any The hand context
----@field mainHand boolean True if rendering the main hand
----@field deltaTime number Time since last frame
 ---@field equipProgress number Progress of equipping an item
+---@field isLeft boolean Which hand the item is in true for right, false for left (not main / offhand)
+---@field isMain boolean True if rendering the main hand
+---@field deltaTime number Time since last frame
 ---@field mainHandSwingProgress number
 ---@field offHandSwingProgress number 
 ---@field mainHandSwitchEvent boolean
 ---@field offHandSwitchEvent boolean
----@field swingMHand boolean
----@field swingOHand boolean
 ---@field interact boolean
 ---@field blockBreaking boolean
----@field item any The item this script is currently running for
----@field particles any
-
----Container for all HMI variables (model part animations)
----@class data
----@field bl boolean Which hand the item is in true for right, false for left (not main / offhand)
----@field swingProgress number
----@field player any The player object
 ---@field hand any The hand context
----@field mainHand boolean True if rendering the main hand
----@field deltaTime number Time since last frame
----@field equipProgress number Progress of equipping an item
----@field mainHandSwingProgress number
----@field offHandSwingProgress number
----@field mainHandSwitchEvent boolean
----@field offHandSwitchEvent boolean
----@field swingMHand boolean
----@field swingOHand boolean
----@field interact boolean
----@field blockBreaking boolean
----@field item any The item this script is currently running for
----@field spriteID string The path of the item model that is currently being rendered
+
+---Container for all HMI variables
+---@class context
+context = {}
 
 
 
 ---Storage for persistant variables
 ---@class global
 shared = {}
-
----Container for all HMI variables
----@class context
-context = {}
-
----Container for all HMI variables (item_model and item_model_addon)
----@class data
-data = {}
