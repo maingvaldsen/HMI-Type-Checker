@@ -787,6 +787,19 @@ function keyframe.length() end
 
 
 
+---@class loader
+Loader = {}
+
+---@param script string The path of the script to laod (e.g. "minecraft:holdmyitems/hand/swings.lua")
+---@param context string What the script should run for ("hand", "hand relative", "item", "item model")
+function Loader:load(script, context) end
+
+
+
+------------------------ /////////////////////// Three spaces was not enough for me to notice so im just doing anything at this point to try and sepparete things 😭 \\\\\\\\\\\\\\\\\\\\\\\\ ------------------------
+
+
+
 ---Container for all HMI variables
 ---@class context
 ---@field matrices any 
@@ -832,7 +845,7 @@ function keyframe.length() end
 
 ---Storage for persistant variables
 ---@class global
-global = {}
+shared = {}
 
 ---Container for all HMI variables
 ---@class context
