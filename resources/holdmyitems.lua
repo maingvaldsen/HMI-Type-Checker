@@ -561,9 +561,15 @@ function player.getActiveHand() end
 
 
 
----DOES NOT CURRENTLY EXIST YET IN 6.0
+---DOES NOT CURRENTLY EXIST IN 6.0!!!!!!!
+---Play client-side sounds by vanilla sound id
 ---@class sounds
 S = {}
+
+---Play a sound
+---@param sound string The sound id to play (e.g., "entity.player.levelup")
+---@param volume number The volume to play the sound at
+function S.playSound(sound, volume) end
 
 
 
@@ -590,6 +596,7 @@ KeyBindManager = {}
 ---@return boolean state Wheter the key is pressed or not
 function KeyBindManager.isKeyPressed(key) end
 
+---DOES NOT CURRENTLY EXIST IN 6.0!!!!!!!
 ---Particle manager API for creating and managing particles
 ---@class particleManager
 particleManager = {}
