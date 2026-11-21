@@ -626,13 +626,13 @@ function player.getActiveHand() end
 
 ---Play client-side sounds by vanilla sound id
 ---@class sound
-Sound = {}
+sound = {}
 
 ---Play a sound
 ---@param sound string The sound id to play (e.g., "entity.player.levelup")
 ---@param volume number The volume to play the sound at
 ---@param pitch number The pitch to play the sound at
-function Sound.playSound(sound, volume, pitch) end
+function sound.playSound(sound, volume, pitch) end
 
 
 
