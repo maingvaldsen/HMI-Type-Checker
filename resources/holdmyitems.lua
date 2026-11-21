@@ -662,7 +662,7 @@ keybind = {}
 
 ---@param keyCode number
 ---@return boolean isPressed
-function keybind.isPressed(keyCode) end
+function keybind.isKeyPressed(keyCode) end
 
 
 
@@ -781,9 +781,47 @@ function particles.spawn(options) end
 
 
 
----Debugger to print stuff to the screen
----@class debugger
-debugger = {}
+---@alias DebugWidgetType "table"|"bar"|"pie"|string
+
+---Properties for debug.out
+---@class DebugWidgetOptions
+---@field type? DebugWidgetType What kind of widget to draw.
+---@field data? any The value to display
+---@field title? string Title shown on the widget
+---@field label? string Label text
+---@field value? number
+---@field fraction? number
+---@field progress? number
+---@field bars? table[]
+---@field slices? table[]
+---@field entries? table[]
+---@field color? integer|number[]
+---@field width? number
+---@field height? number
+---@field top? number
+---@field customY? number
+---@field visible? boolean Set false to hide the widget without removing it (default: true)
+---@field [string] any
+
+---Handle returned by debug.out
+---@class DebugWidget
+local DebugWidget = {}
+
+---Update the widget by merging the given properties into it.
+---@param changes DebugWidgetOptions|table
+---@return DebugWidget
+function DebugWidget:set(changes) end
+
+---Remove this widget from the screen.
+function DebugWidget:remove() end
+
+---Create a debug widget on screen.
+---@param options DebugWidgetOptions
+---@return DebugWidget widget
+function debug.out(options) end
+
+---Remove every widget this script created.
+function debug.clear() end
 
 
 
