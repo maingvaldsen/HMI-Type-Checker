@@ -194,11 +194,11 @@ function easings.cubicEase(progress) end
 item = {}
 
 ---idk i never used it
----@return any noIdea I never used this, i genuinely have no idea what the fuck this returns
+---@return "none"|"eat"|"drink"|"block"|"bow"|"crossbow"|"spear"|"trident"|"brush"|"spyglass"|"toot_horn"|string
 function item.getUseAction() end
 
 ---Check if an item matches a given item type
----@param id any Item type to match against (from Items.get())
+---@param id string Item type to match against (e.g., "minecraft:diamond_sword")
 ---@return boolean matches True if the item matches the type
 function item.isOf(id) end
 
@@ -220,7 +220,7 @@ function item.getName() end
 function item.isEmpty() end
 
 ---If the item is a charged crossbow or something?? 😭
----@return boolean boolean I never used this, but again, if you use your head you should come to the same conclution as me
+---@return boolean boolean I never used this, but again, if you use your head you should come to the same conclusion as me (boolean)
 function item.isChargedCrossbow() end
 
 ---Check if the given stack is a block
@@ -234,6 +234,20 @@ function item.isLantern() end
 ---Check if the given stack is enchanted
 ---@return boolean state True if the given stack is enchanted
 function item.isEnchanted() end
+
+---@return number damage Attack damage of the held item (0 for non-weapons)
+function item.getAttackDamage() end
+
+---@return {canDamage:boolean, canDismount:boolean, canKnockBack:boolean, hitImpact:any} data
+function item.getSpearData() end
+
+---Render the held item as a block (or not)
+---@param state boolean
+function item.renderAsBlock(state) end
+
+---Set the swing speed for the held item
+---@param ticks integer
+function item.setSwingSpeed(ticks) end
 
 
 
@@ -328,7 +342,7 @@ function jmath.PI() end
 
 ---Get the sinus of a number
 ---@param num number Number to get the sinus of
----@return number sin the sinuse of the provided number
+---@return number sin the sinus of the provided number
 function jmath.sin(num) end
 
 ---Get the cosinus of a number
@@ -342,11 +356,6 @@ function jmath.cos(num) end
 ---@param max number The maximum the number can be
 ---@return number number The clamped number
 function jmath.clamp(num, min, max) end
-
----Rounds a number down
----@param num number The number to floor
----@return number number The floored number
-function jmath.floor(num) end
 
 ---Rounds a number down
 ---@param num number The number to floor
@@ -368,12 +377,16 @@ function jmath.pow(a, b) end
 ---Rounds a number up
 ---@param num number The number to round
 ---@return number number The rounded number
-function jmath.floor(num) end
+function jmath.ceil(num) end
 
 ---Rounds a number to the closest whole number
 ---@param num number The number to round
 ---@return number number The rounded number
 function jmath.round(num) end
+
+---@param num number
+---@return number
+function jmath.abs(num) end
 
 
 
@@ -602,7 +615,7 @@ function player.getStandingBlock() end
 ---@return string biomeId
 function player.getBiomeId() end
 
----@return string activeHand
+---@return "MAIN_HAND"|"OFF_HAND" activeHand
 function player.getActiveHand() end
 
 
@@ -692,7 +705,7 @@ function keybind.isPressed(keyCode) end
 ---@field drag? number Velocity multiplier per tick
 ---@field lifetime? integer Life span in ticks
 ---@field fadeIn? integer Fade-in duration in ticks
----@field dafeOut? integer Fade-out dutation in ticks
+---@field fadeOut? integer Fade-out duration in ticks
 ---@field growIn? integer Grow-in duration in ticks
 ---@field shrinkOut? integer Shrink-out duration in ticks
 ---@field data? table Custom per-particle data, readable with p.data in the ticker function
@@ -761,21 +774,6 @@ particles = {}
 ---@param options ParticleSpawnOptions
 ---@return Particle|nil particle
 function particles.spawn(options) end
-
-
-
------------------------- /////////////////////// Three spaces was not enough for me to notice so im just doing anything at this point to try and sepparete things 😭 \\\\\\\\\\\\\\\\\\\\\\\\ ------------------------
-
-
-
----Block rendering control API
----@class renderAsBlock
-renderAsBlock = {}
-
----Enable or disable block rendering for specific items
----@param blockId string Block identifier (e.g., "minecraft:oak_sapling")
----@param shouldRender boolean True to render as block
-function renderAsBlock.put(blockId, shouldRender) end
 
 
 
@@ -888,7 +886,7 @@ function keyframe.length() end
 ---@class loader
 Loader = {}
 
----@param script string The path of the script to laod (e.g. "minecraft:holdmyitems/hand/swings.lua")
+---@param script string The path of the script to load (e.g. "minecraft:holdmyitems/hand/swings.lua")
 ---@param context string What the script should run for ("hand", "hand_relative", "item", "item_model")
 function Loader:load(script, context) end
 
@@ -904,7 +902,7 @@ function Loader:load(script, context) end
 ---@field equipProgress number
 ---@field isLeft boolean Which hand the item is in true for right, false for left (not main / offhand)
 ---@field isMain boolean True if rendering the main hand
----@field hand string
+---@field hand "MAIN_HAND"|"OFF_HAND"
 ---@field deltaTime number
 ---@field mainHandSwingProgress number
 ---@field offHandSwingProgress number 
@@ -932,5 +930,5 @@ context = {}
 
 
 ---Storage for persistant variables
----@class global
+---@class shared
 shared = {}
