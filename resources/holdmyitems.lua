@@ -901,17 +901,29 @@ function Loader:load(script, context) end
 ---Container for all HMI variables
 ---@class context
 ---@field swingProgress number
----@field equipProgress number Progress of equipping an item
+---@field equipProgress number
 ---@field isLeft boolean Which hand the item is in true for right, false for left (not main / offhand)
 ---@field isMain boolean True if rendering the main hand
----@field deltaTime number Time since last frame
+---@field hand string
+---@field deltaTime number
 ---@field mainHandSwingProgress number
 ---@field offHandSwingProgress number 
----@field mainHandSwitchEvent boolean
----@field offHandSwitchEvent boolean
----@field interact boolean
----@field blockBreaking boolean
----@field hand any The hand context
+---@field mainHandSwitchEvent number
+---@field offHandSwitchEvent number
+---@field interact number
+---@field blockBreaking number
+---@field step number
+---@field steps number
+---@field firstStep boolean
+---@field logicDeltaTime number
+---@field signalTick number
+---@field signalEventCount number
+---@field swingMHand boolean
+---@field swingOHand boolean
+---@field swingedMainHand boolean
+---@field swingedOffHand boolean
+---@field interactedMainHand boolean
+---@field interactedOffHand boolean
 
 ---Container for all HMI variables
 ---@class context
