@@ -237,17 +237,6 @@ function item.isEnchanted() end
 
 
 
----Fetch Item instances from the registry
----@class itemRegistry
-Items = {}
-
----Get an item by identifier
----@param identifier string Item by identifier (e.g., "minecraft:oak_sapling")
----@return any item Item by identifier
-function Items.get(identifier) end
-
-
-
 ---Obtain TagKey<Item> entries for vanilla or Fabric tags
 ---@class itemTags
 Tags = {}
@@ -465,8 +454,71 @@ function animator.rotateZ(fromUV, toUV, degrees, originX, originY, originZ) end
 ---@class playerInfo
 player = {}
 
+---@return number fwdVelocity
+function player.getForwardVelocity() end
+
+---@return number strafeVelocity
+function player.getStrafeVelocity() end
+
+---@return boolean state
+function player.isSneakWalking() end
+
+---@return boolean state
+function player.isSwimSprinting() end
+
+---@return number climbDirection
+function player.getClimbDirection() end
+
+---@return boolean state
+function player.isLowHunger() end
+
+---@return boolean state
+function player.isLowHealth() end
+
+---@return boolean state
+function player.isFlying() end
+
+---@return boolean state
+function player.isFallFlying() end
+
+---@return boolean state
+function player.isSleeping() end
+
+---@return boolean state
+function player.isPassenger() end
+
+---@return boolean state
+function player.isOnFire() end
+
+---@return boolean state
+function player.isInLava() end
+
+---@return boolean state
+function player.isBlocking() end
+
+---@return boolean state
+function player.isAlive() end
+
+---@return number foodLevel
+function player.getFoodLevel() end
+
+---@return number saturation
+function player.getSaturation() end
+
+---@return number airSupply
+function player.getAirSupply() end
+
+---@return number maxHealth
+function player.getMaxHealth() end
+
+---@return number absorptionAmount
+function player.getAbsorption() end
+
 ---@return boolean state
 function player.isSneaking() end
+
+---@return number age
+function player.getAge() end
 
 ---@return boolean state
 function player.isSprinting() end
@@ -504,55 +556,53 @@ function player.isInPowderSnow() end
 ---@return boolean state
 function player.isRaining() end
 
----Check if item is currently cooling down
----@param item any The item you want to check
 ---@return boolean state
-function player.isItemCoolingDown(item) end
+function player.isItemCoolingDown() end
 
----Get the player's health
 ---@return number health
 function player.getHealth() end
 
----Get the player's X coordinate
----@return number pos
+---@return number xCoord
 function player.getX() end
 
----Get the player's Y coordinate
----@return number pos
+---@return number yCoord
 function player.getY() end
 
----Get the player's Z coordinate
----@return number pos
+---@return number zCoord
 function player.getZ() end
 
----Get the vector of the player's speed
----@return number x
----@return number y
----@return number z
+---@return table speedVector {x, y, z}
 function player.getSpeedVector() end
 
----Get the player's total speed
+---@return number horizontalSpeed
+function player.getHorizontalSpeed() end
+
+---@return number verticalSpeed
+function player.getVerticalSpeed() end
+
 ---@return number speed
 function player.getSpeed() end
 
----Get the player's yaw (looking left/right)
----@return number yaw Yaw in degrees (-inf to inf)
+---@return number yaw
 function player.getYaw() end
 
----Get the player's pitch (looking up/down)
----@return number pitch Pitch in degrees
+---@return number pitch
 function player.getPitch() end
 
----@return number scale
+---@return number frozenPercent
 function player.getFreezingScale() end
 
----Returns block ID string of the block directly under the player
----@return string block The block (e.g., "minecraft:dirt")
+---@param id string
+---@return boolean state
+function player.isStandingOnTag(id) end
+
+---@return string block
 function player.getStandingBlock() end
 
----@return string id
+---@return string biomeId
 function player.getBiomeId() end
 
+---@return string activeHand
 function player.getActiveHand() end
 
 
@@ -561,15 +611,15 @@ function player.getActiveHand() end
 
 
 
----DOES NOT CURRENTLY EXIST IN 6.0!!!!!!!
 ---Play client-side sounds by vanilla sound id
----@class sounds
-S = {}
+---@class sound
+Sound = {}
 
 ---Play a sound
 ---@param sound string The sound id to play (e.g., "entity.player.levelup")
 ---@param volume number The volume to play the sound at
-function S.playSound(sound, volume) end
+---@param pitch number The pitch to play the sound at
+function Sound.playSound(sound, volume, pitch) end
 
 
 
@@ -587,45 +637,136 @@ Texture = {}
 ---@return any texture Texture for use in particle rendering
 function Texture.of(namespace, path) end
 
+
+
+------------------------ /////////////////////// Three spaces was not enough for me to notice so im just doing anything at this point to try and sepparete things 😭 \\\\\\\\\\\\\\\\\\\\\\\\ ------------------------
+
+
+
 ---Exposes keybind state for use in scripts
 ---@class bindManager
-KeyBindManager = {}
+keybind = {}
 
----Checks is a key is pressed
----@param key number The key to check (JS Keycodes)
----@return boolean state Wheter the key is pressed or not
-function KeyBindManager.isKeyPressed(key) end
+---@param keyCode number
+---@return boolean isPressed
+function keybind.isPressed(keyCode) end
 
----DOES NOT CURRENTLY EXIST IN 6.0!!!!!!!
+
+
+------------------------ /////////////////////// Three spaces was not enough for me to notice so im just doing anything at this point to try and sepparete things 😭 \\\\\\\\\\\\\\\\\\\\\\\\ ------------------------
+
+
+
+---@alias Vector3 number[]|{x:number, y:number, z:number} # {x, y, z}
+---@alias RGBColor number[]|{r:number, g:number, b:number} # (0 - 1) per channel
+---@alias ParticleAnchor "camera"|"view"|"screen"|"hand"|"arm"|"item"
+---@alias ParticleFollow "free"|"attached"|"smooth"
+---@alias ParticleBlend "translucent"|"alpha"|"normal"|"additive"|"add"
+---@alias ParticleLight "world"|"fullbright"|integer # "world", "fullbright", or a light level (0 - 15)
+---@alias ParticleHand "main"|"off"|"main_hand"|"off_hand" # defaults to the scripts hand
+
+---Options table for particles.spawn
+---@class ParticleSpawnOptions
+---@field texture? string Single texture, e.g. "textures/particle/flame"
+---@field textures? string[] Animation frames (played in order)
+---@field frameTicks? integer Ticks per frame when using textures (min 1)
+---@field loop? boolean Loop the animation when using textures
+---@field loopFrames? boolean Alias for loop
+---@field anchor? ParticleAnchor Space that pos and vel are relative to (default: "item")
+---@field hand? ParticleHand Which hand the particle belongs to
+---@field pos? Vector3 Spawn position in anchor space
+---@field vel? Vector3 Initial velocity
+---@field velSpace? "world"|"anchor" Space vel is expressed in (defaults to the anchor space)
+---@field follow? ParticleFollow "free" = converted to world coords. "attached" = glued to the anchor. "smooth" = trails the anchor
+---@field followSpeed? number Trailing speed when follow = "smooth"
+---@field size? number Initial size
+---@field rotation? number Initial rotation
+---@field spin? number Rotation speed
+---@field color? RGBColor Color tint
+---@field alpha? number Opacity (0 - 1)
+---@field blend? ParticleBlend Blend mode (default: "translucent")
+---@field light? ParticleLight Lighting mode
+---@field collision? boolean Collide with the world
+---@field occlude? boolean Hidden behind blocks
+---@field gravity? number Gravity per tick
+---@field drag? number Velocity multiplier per tick
+---@field lifetime? integer Life span in ticks
+---@field fadeIn? integer Fade-in duration in ticks
+---@field dafeOut? integer Fade-out dutation in ticks
+---@field growIn? integer Grow-in duration in ticks
+---@field shrinkOut? integer Shrink-out duration in ticks
+---@field data? table Custom per-particle data, readable with p.data in the ticker function
+---@field ticker? (fun(p: Particle))|string Per-tick callback function
+
+---@class Particle
+---@field localX number Particle's X position
+---@field localY number Particle's Y position
+---@field localZ number Particle's Z position
+---@field vx number Particle's X velocity
+---@field vy number Particle's Y velocity
+---@field vz number Particle's Z velocity
+---@field follow ParticleFollow
+---@field followSpeed number
+---@field gravity number
+---@field drag number
+---@field age integer The particles age in ticks
+---@field lifetime integer
+---@field progress number The particles age divided by lifetime
+---@field size number
+---@field rotation number
+---@field spin number
+---@field alpha number
+---@field dead boolean
+---@field spawned boolean
+---@field fullbright boolean
+---@field light ParticleLight
+---@field collision boolean
+---@field onGround boolean
+---@field occlude boolean
+---@field blend ParticleBlend
+---@field hand ParticleHand
+---@field data table
+local Particle = {}
+
+---Kill the particle early
+function Particle:kill() end
+
+---Set the particle's tint
+---@param r number
+---@param g number
+---@param b number
+function Particle:setColor(r, g, b) end
+
+---Set the particle's velocity
+---@param x number
+---@param y number
+---@param z number
+function Particle:setVelocity(x, y, z) end
+
+---Move the particle
+---@param x number
+---@param y number
+---@param z number
+function Particle:teleport(x, y, z) end
+
+---Change the particle's texture
+---@param texture string
+function Particle:setTexture(texture) end
+
 ---Particle manager API for creating and managing particles
----@class particleManager
-particleManager = {}
+---@class particles
+particles = {}
 
----Add a new particle to the screen
----@param particles any particles variable from context
----@param gravity boolean Whether the particle is affected by gravity
----@param x number Initial X position
----@param y number Initial Y position
----@param z number Initial Z position
----@param dx number X position particle will move toward over its lifetime
----@param dy number Y position particle will move toward over its lifetime
----@param dz number Z position particle will move toward over its lifetime
----@param rx number Initial X rotation
----@param ry number Initial Y rotation
----@param rz number Initial Z rotation
----@param drx number X rotation particle will move toward over its lifetime
----@param dry number Y rotation particle will move toward over its lifetime
----@param drz number Z rotation particle will move toward over its lifetime
----@param size number Particle size
----@param texture any Texture from Texture.of()
----@param renderSpace any Render space ("ITEM", "SCREEN")
----@param hand any Hand from context or data
----@param lifetimeType string Lifetime type ("SPAWN", "OPACITY", "SCALE", "KEYFRAME")
----@param renderType string Render type ("ADDITIVE", "CUTOUT", "CUTOUT_L", "TRANSLUCENT", "TRANSLUCENT_L" and more that i cant remember)
----@param lifetime integer Total lifetime
----@param opacity integer Opacity (0-255)
----@param tickerFunction function|nil Optional ticker function for particle updates
-function particleManager.addParticle(particles, gravity, x, y, z, dx, dy, dz, rx, ry, rz, drx, dry, drz, size, texture, renderSpace, hand, lifetimeType, renderType, lifetime, opacity, tickerFunction) end
+---Spawn a particle. Call once per tick at most (guard with context.firstStep).
+---@param options ParticleSpawnOptions
+---@return Particle|nil particle
+function particles.spawn(options) end
+
+
+
+------------------------ /////////////////////// Three spaces was not enough for me to notice so im just doing anything at this point to try and sepparete things 😭 \\\\\\\\\\\\\\\\\\\\\\\\ ------------------------
+
+
 
 ---Block rendering control API
 ---@class renderAsBlock
@@ -645,10 +786,6 @@ function renderAsBlock.put(blockId, shouldRender) end
 ---Debugger to print stuff to the screen
 ---@class debugger
 debugger = {}
-
----Print something to the screen
----@param info any Info to print
-function debugger.out(info) end
 
 
 
